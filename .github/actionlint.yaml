@@ -1,0 +1,12 @@
+# actionlint configuration
+# https://github.com/rhysd/actionlint/blob/main/docs/config.md
+
+# These secrets need to be configured in GitHub repository settings:
+# - CODECOV_TOKEN: For uploading coverage reports to Codecov
+# - SNYK_TOKEN: For Snyk security scanning
+# - CHROMATIC_PROJECT_TOKEN: For Chromatic visual regression testing
+
+# Suppress expression warnings for known secrets that will be configured in GitHub
+ignore:
+  - 'Context access might be invalid: (CODECOV_TOKEN|SNYK_TOKEN|CHROMATIC_PROJECT_TOKEN)'
+
