@@ -1,5 +1,7 @@
 # Architecture Documentation
 
+> **Note**: This document provides detailed implementation patterns and technical specifics for AI-assisted development. For a high-level architecture overview, see [ARCHITECTURE.md](../ARCHITECTURE.md).
+
 ## System Overview
 
 This document describes the architecture for modern frontend applications built with TypeScript, React 18+, Vite, and Module Federation for microfrontend architecture.

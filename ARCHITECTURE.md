@@ -1,5 +1,7 @@
 # Architecture Documentation
 
+> **Note**: This document provides a high-level architecture overview. For detailed implementation patterns, Module Federation specifics, and AI-assisted development context, see [.context/architecture.md](.context/architecture.md).
+
 ## Overview
 
 This application is built with modern web technologies focusing on type safety, performance, accessibility, and maintainability.
