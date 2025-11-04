@@ -87,7 +87,7 @@ The `.cursorrules` file configures Cursor AI to act as a principal frontend arch
 - **Module Federation**: v1 and v2 support with Vite
 - **Design Systems**: Token-based design, component composition patterns
 - **Performance**: Web Vitals targets, code splitting, optimization strategies
-- **Security**: Snyk integration, secure coding practices
+- **Security**: npm audit integration for dependency vulnerability scanning
 - **Accessibility**: WCAG 2.2 Level AA compliance
 
 ### 📚 Context Documentation
@@ -105,7 +105,7 @@ The `.context/` directory provides AI context for your project:
 **GitHub Actions**:
 
 - `ci.yml` - Lint, type-check, test, build
-- `security.yml` - Snyk scanning, dependency audits
+- `security.yml` - npm audit for dependency vulnerability scanning
 - `a11y.yml` - Accessibility testing
 - `visual-regression.yml` - Chromatic visual testing
 - `coverage.yml` - Test coverage reporting
@@ -200,9 +200,7 @@ Enforced Web Vitals targets:
 
 ### Security by Default
 
-- Snyk scanning in CI/CD
-- npm audit automation
-- Secure coding patterns enforced
+- npm audit scanning in CI/CD for vulnerability detection
 - CSP headers configured
 
 ### Accessibility
@@ -312,15 +310,12 @@ VITE_ENABLE_DEV_TOOLS=true
 
 Required secrets:
 
-- `SNYK_TOKEN` - For Snyk security scanning
 - `CHROMATIC_PROJECT_TOKEN` - For visual regression testing
 - `CODECOV_TOKEN` - For coverage reporting (optional)
 
 ### GitLab Variables
 
 Required variables:
-
-- `SNYK_TOKEN` - For Snyk security scanning
 
 ## Development Workflow
 

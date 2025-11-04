@@ -1,3 +1,10 @@
+/**
+ * Vite Configuration Template
+ * This is a template file for Vite v5+ with React and Module Federation.
+ * Copy this to your project root and adjust paths/settings as needed.
+ * @see https://vitejs.dev/config/
+ */
+// @ts-nocheck - Template file, module availability depends on project dependencies
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import federation from '@originjs/vite-plugin-federation'
@@ -68,7 +75,6 @@ export default defineConfig({
     open: true,
     cors: true,
     // For Module Federation development
-    cors: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
     },

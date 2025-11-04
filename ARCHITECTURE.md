@@ -240,8 +240,7 @@ app.js (< 200KB gzipped)
 
 ### Dependency Security
 
-- **Snyk Scanning**: Automated vulnerability detection
-- **npm Audit**: Regular security audits
+- **npm Audit**: Built-in dependency vulnerability detection
 - **Dependency Updates**: Automated PRs for patches
 - **License Compliance**: Check all dependencies
 

@@ -50,7 +50,7 @@ const preview: Preview = {
   // Global decorators
   decorators: [
     (Story) => (
-      <div style={{ padding: '2rem' }}>
+      <div>
         <Story />
       </div>
     ),

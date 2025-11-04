@@ -36,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ShadCN UI component integration (copy-paste approach)
 - Radix UI primitive patterns documentation
 - Testing stack with Vitest, Testing Library, and Playwright
-- Security scanning with Snyk integration
+- Security scanning with npm audit (built-in)
 - Accessibility standards (WCAG 2.2 Level AA)
 - CI/CD workflows for GitHub Actions and GitLab CI
 - Project templates for Vite, TypeScript, ESLint, Storybook
@@ -96,7 +96,7 @@ Each entry should:
 - Fixed accessibility documentation examples
 
 ### Security
-- Updated Snyk scanning configuration
+- Updated npm audit configuration for security scanning
 - Added security best practices to documentation
 ```
 

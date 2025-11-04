@@ -362,13 +362,12 @@ EOF
 ```bash
 # GitHub: Already configured in .github/workflows/
 # Add secrets in GitHub repo settings:
-# - SNYK_TOKEN
 # - CHROMATIC_PROJECT_TOKEN (optional)
 # - CODECOV_TOKEN (optional)
 
 # GitLab: Already configured in .gitlab-ci.yml
 # Add variables in GitLab CI/CD settings:
-# - SNYK_TOKEN
+# - CHROMATIC_PROJECT_TOKEN (optional)
 ```
 
 ### 9. Install Additional Tools
@@ -495,12 +494,11 @@ npm run dev
    - Update `vite.config.ts` with your Module Federation setup
    - Modify templates as needed
 
-2. **Set Up Snyk Security Scanning**
+2. **Check for Vulnerabilities with npm audit**
 
    ```bash
-   npm install -g snyk
-   snyk auth
-   snyk test
+   npm audit
+   npm audit fix  # Fix automatically if possible
    ```
 
 3. **Configure Storybook**
@@ -617,3 +615,23 @@ npm run build
 ---
 
 **Your principal frontend setup is ready to use!**
+
+## Security Setup
+
+The project uses `npm audit` (built-in and free) for dependency vulnerability scanning.
+
+1. **Check for Vulnerabilities**
+
+   ```bash
+   npm audit
+   ```
+
+2. **Fix Vulnerabilities Automatically**
+
+   ```bash
+   npm audit fix
+   ```
+
+The CI/CD pipeline runs `npm audit` automatically on every push and pull request.
+
+## Environment Setup
