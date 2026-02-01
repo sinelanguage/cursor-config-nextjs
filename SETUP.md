@@ -39,7 +39,27 @@ Cursor AI automatically recognizes and uses these files **without any manual con
   - `rules/` - Additional rule files that complement `.cursorrules`
 - **No action needed**: Copy the entire `.cursor/` directory to your project root
 
-#### 4. `.cursorignore` File
+#### 4. `.cursor/skills/` Directory
+
+- **Location**: Project root (`.cursor/skills/`)
+- **Auto-detected**: ✅ Yes
+- **Purpose**: Agent Skills (reusable workflows and task playbooks)
+- **How it works**: Cursor discovers skills at startup and makes them available via `/`
+- **Format**: `.cursor/skills/<skill-name>/SKILL.md`
+- **Requires**: Cursor 2.4+ (skills support)
+- **No action needed**: Copy the entire `.cursor/skills/` directory to your project root
+
+#### 5. `.cursor/agents/` Directory
+
+- **Location**: Project root (`.cursor/agents/`)
+- **Auto-detected**: ✅ Yes
+- **Purpose**: Custom subagents for verification or parallel work
+- **How it works**: Cursor loads subagents automatically and can delegate tasks
+- **Format**: `.cursor/agents/<name>.md`
+- **Requires**: Cursor 2.4+ (subagents support)
+- **No action needed**: Copy the entire `.cursor/agents/` directory to your project root
+
+#### 6. `.cursorignore` File
 
 - **Location**: Project root (`.cursorignore`)
 - **Auto-detected**: ✅ Yes
@@ -59,6 +79,10 @@ To verify Cursor is using these files:
 2. **Check `.context/`**:
    - Ask Cursor: "What is our Module Federation architecture?"
    - It should reference `architecture.md` from `.context/`
+
+3. **Check Skills**:
+   - Type `/component-scaffold` in Agent chat
+   - It should appear in the slash-command list
 
 ### ⚙️ What Requires Manual Setup
 
@@ -104,10 +128,12 @@ These components need to be manually configured or installed:
 ### Quick Reference Table
 
 | Component | Auto-Detected | Manual Setup Required | Notes |
-|-----------|--------------|----------------------|-------|
+| --------- | ------------ | -------------------- | ----- |
 | `.cursorrules` | ✅ Yes | ❌ No | Works immediately after copy |
 | `.context/` directory | ✅ Yes | ❌ No | Automatically indexed |
 | `.cursor/` directory | ✅ Yes | ❌ No | Workspace settings and rules |
+| `.cursor/skills/` | ✅ Yes | ❌ No | Skills available via `/` |
+| `.cursor/agents/` | ✅ Yes | ❌ No | Custom subagents available |
 | `.cursorignore` | ✅ Yes | ❌ No | Controls AI indexing |
 | Project dependencies | ❌ No | ✅ Yes | Run `npm install` |
 | Build configs (Vite, TS) | ❌ No | ✅ Yes | Copy from `templates/` |
@@ -244,6 +270,31 @@ mkdir -p .storybook
 cp templates/.storybook/main.ts .storybook/main.ts
 cp templates/.storybook/preview.tsx .storybook/preview.tsx
 ```
+
+### 3.5 Optional: Add Agent Skills
+
+If you want reusable workflows available via `/` commands:
+
+```text
+.cursor/
+└── skills/
+    └── component-scaffold/
+        └── SKILL.md
+```
+
+You can invoke a skill by typing `/component-scaffold` in Agent chat.
+
+### 3.6 Optional: Add Custom Subagents
+
+If you want verification or parallel workflows:
+
+```text
+.cursor/
+└── agents/
+    └── verifier.md
+```
+
+The Agent can automatically delegate verification tasks to this subagent.
 
 ### 4. Set Up Environment Variables
 

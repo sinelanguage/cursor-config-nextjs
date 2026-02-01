@@ -7,7 +7,12 @@ This directory contains workspace-specific settings and configurations for Curso
 ```text
 .cursor/
 ├── README.md           # This file
+├── agents/             # Custom subagents (optional)
+│   └── verifier.md
 ├── settings.json       # Workspace settings (VS Code compatible)
+├── skills/             # Agent skills (optional)
+│   └── component-scaffold/
+│       └── SKILL.md
 └── rules/              # Additional rule files
     ├── README.md       # Rules directory documentation
     └── project-specific.md
@@ -36,6 +41,20 @@ This directory contains workspace-specific settings and configurations for Curso
 **Format**: Markdown files (`.md` or `.mdc`)  
 **Usage**: Project-specific or domain-specific rules
 
+### `skills/` Directory
+
+**Location**: `.cursor/skills/`  
+**Purpose**: Agent Skills (reusable workflows and task playbooks)  
+**Format**: `.cursor/skills/<skill-name>/SKILL.md`  
+**Usage**: Scaffolding, release checklists, documentation workflows
+
+### `agents/` Directory
+
+**Location**: `.cursor/agents/`  
+**Purpose**: Custom subagents for verification or parallel work  
+**Format**: `.cursor/agents/<name>.md`  
+**Usage**: Validation, code review, focused research
+
 ## How Cursor Uses These Files
 
 ### Automatic Detection
@@ -57,12 +76,21 @@ Cursor automatically detects and uses:
    - Combined with `.cursorrules` for AI guidance
    - Automatically indexed
 
-### Priority Order
+4. **`.cursor/skills/**/SKILL.md`**
+   - Reusable workflows and task playbooks
+   - Discovered at startup and available via `/`
+   - Skills can include optional scripts and references
 
-1. `.cursorrules` (project root) - Main rules
-2. `.cursor/rules/*.md` - Additional rules (complement main rules)
-3. `.cursor/settings.json` - Workspace settings
-4. `.cursorignore` - Indexing exclusions
+5. **`.cursor/agents/*.md`**
+   - Custom subagents for verification or parallel work
+   - Available to Agent for delegation
+
+### Loading Notes
+
+- `.cursorrules` and `.cursor/rules/*.md` are merged for rule guidance.
+- `.cursor/settings.json` applies workspace settings when the project opens.
+- `.cursorignore` controls indexing exclusions.
+- Skills and subagents are discovered independently when present.
 
 ## Customization
 
@@ -77,6 +105,27 @@ Create a new `.md` file in `.cursor/rules/`:
 
 - Use specific pattern for this domain
 - Follow this convention
+```
+
+### Adding Agent Skills
+
+Create a new skill folder with a `SKILL.md` file:
+
+```text
+.cursor/
+└── skills/
+    └── my-skill/
+        └── SKILL.md
+```
+
+### Adding Custom Subagents
+
+Create a new subagent file:
+
+```text
+.cursor/
+└── agents/
+    └── verifier.md
 ```
 
 ### Modifying Settings

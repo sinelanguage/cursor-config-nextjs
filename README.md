@@ -14,6 +14,10 @@ This is a **portable Cursor AI configuration** that can be used in any new front
   - ✅ **Auto-detected by Cursor** - Works immediately after copying
 - **Context Documentation** (`.context/`) - Reference docs for AI context retention
   - ✅ **Auto-detected by Cursor** - Automatically indexed for AI context
+- **Agent Skills** (`.cursor/skills/`) - Reusable workflows and task playbooks
+  - ✅ **Auto-detected by Cursor** - Discovered at startup and available via `/`
+- **Custom Subagents** (`.cursor/agents/`) - Specialized helpers for verification and parallel work
+  - ✅ **Auto-detected by Cursor** - Available to Agent for delegation
 - **Automation Templates** - GitHub Actions and GitLab CI configurations
   - ⚙️ Manual setup required - Copy to `.github/` or project root
 - **Project Templates** - Reusable config files for Vite, TypeScript, ESLint, Storybook
@@ -30,6 +34,8 @@ This is a **portable Cursor AI configuration** that can be used in any new front
 - ✅ `.cursorrules` - AI agent configuration (works immediately)
 - ✅ `.context/` - Documentation for AI context (auto-indexed)
 - ✅ `.cursor/` - Workspace settings and additional rules (auto-detected)
+- ✅ `.cursor/skills/` - Agent skills (auto-discovered, slash-command ready)
+- ✅ `.cursor/agents/` - Custom subagents (auto-discovered)
 - ✅ `.cursorignore` - Files to exclude from AI indexing (auto-applied)
 
 **No configuration needed** - Just copy these files and Cursor will use them!
@@ -99,6 +105,24 @@ The `.context/` directory provides AI context for your project:
 - **workflows.md** - Git branching, commit conventions, CI/CD
 - **conventions.md** - File naming, import organization, code structure
 - **stack.md** - Complete technology stack with versions
+
+### 🧰 Agent Skills
+
+Agent Skills are reusable, discoverable workflows that Cursor can invoke automatically or via `/` commands. This repo includes a sample skill you can tailor for your stack.
+
+- **Location**: `.cursor/skills/<skill-name>/SKILL.md`
+- **Format**: YAML frontmatter + instructions
+- **Use cases**: scaffolding components, updating docs, running release checklists
+- **Requires**: Cursor 2.4+ (skills support)
+
+### 🧪 Custom Subagents
+
+Subagents are specialized helpers that the main agent can delegate to for verification or parallel work. This repo includes a sample verifier subagent.
+
+- **Location**: `.cursor/agents/<name>.md`
+- **Format**: YAML frontmatter + prompt
+- **Use cases**: code review, test verification, doc validation
+- **Requires**: Cursor 2.4+ (subagents support)
 
 ### 🚀 Automation
 
@@ -222,7 +246,12 @@ WCAG 2.2 Level AA compliance:
 ├── .cursorignore                # Files to exclude from AI indexing
 ├── .cursor/                     # Workspace settings
 │   ├── README.md                # Cursor workspace documentation
+│   ├── agents/                  # Custom subagents (optional)
+│   │   └── verifier.md
 │   ├── settings.json            # Workspace IDE settings
+│   ├── skills/                  # Agent skills (optional)
+│   │   └── component-scaffold/
+│   │       └── SKILL.md
 │   └── rules/                   # Additional rule files
 │       ├── README.md
 │       └── project-specific.md
@@ -261,6 +290,8 @@ Once copied to your project, Cursor AI will:
 2. **Automatically reference** `.context/` documentation for architectural decisions
 3. **Suggest** using templates when creating new files
 4. **Enforce** quality gates (types, tests, security, a11y)
+5. **Discover** skills and apply them when relevant
+6. **Delegate** verification to subagents when helpful
 
 ### Verifying Cursor Configuration
 
@@ -401,6 +432,31 @@ Edit `.cursorrules` to add project-specific rules:
 - Follow Material Design principles
 - Use Zustand for global state
 ```
+
+### Adding Agent Skills
+
+Create a new skill folder with a `SKILL.md` file:
+
+```text
+.cursor/
+└── skills/
+    └── my-skill/
+        └── SKILL.md
+```
+
+Skills can be invoked with `/my-skill` in chat, or discovered automatically when relevant.
+
+### Adding Custom Subagents
+
+Create a subagent file in `.cursor/agents/`:
+
+```text
+.cursor/
+└── agents/
+    └── verifier.md
+```
+
+Subagents are used by Agent for parallel work or verification.
 
 ### Modifying Templates
 
