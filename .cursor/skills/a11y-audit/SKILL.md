@@ -1,29 +1,30 @@
 ---
-name: a11y-audit
-description: Perform an accessibility audit checklist and suggest fixes.
+name: next-edge-middleware
+description: Add Middleware and Edge Runtime patterns for Next.js.
 disable-model-invocation: true
 ---
-# Accessibility Audit
+# Next.js Middleware and Edge Runtime
 
-Run a focused accessibility pass and list concrete fixes.
+Implement middleware and edge-safe logic for request-time controls.
 
 ## When to Use
 
-- Use this skill before release or for new UI surfaces.
+- Auth gating and redirects
+- Geo-based routing
+- Lightweight request processing
 
 ## Inputs
 
-- Target components or pages
-- Known issues or user reports
+- Matchers and paths
+- Redirect/rewrites rules
 
 ## Instructions
 
-1. Review semantic HTML usage and heading structure.
-2. Check keyboard navigation and focus management.
-3. Validate ARIA usage (only when necessary).
-4. Confirm color contrast and error announcements.
-5. Suggest tests or automation improvements.
+1. Add `middleware.ts` at the project root.
+2. Keep logic stateless and edge-safe.
+3. Use `matcher` config to scope routes.
+4. Avoid Node-only APIs in edge runtime.
 
 ## Output
 
-- A checklist of issues and recommended fixes.
+- Middleware with scoped edge-safe behavior.

@@ -1,29 +1,29 @@
 ---
-name: form-pattern
-description: Build a typed form with validation, errors, and tests.
+name: next-server-actions
+description: Build typed Server Actions for forms and mutations.
 disable-model-invocation: true
 ---
-# Form Pattern
+# Next.js Server Actions
 
-Create a form that is typed, validated, accessible, and tested.
+Create Server Actions for form submissions and mutations.
 
 ## When to Use
 
-- Use this skill when building any form or wizard.
+- Mutations co-located with App Router pages
+- Forms requiring server-side validation
 
 ## Inputs
 
-- Fields and validation rules
-- Submission behavior
-- Error and loading states
+- Form fields and validation rules
+- Redirect or revalidation behavior
 
 ## Instructions
 
-1. Define a typed form model.
-2. Add validation (client-side and server error mapping).
-3. Implement accessible labels, hints, and error messages.
-4. Add tests for validation and submit behavior.
+1. Create a Server Action in the route or `actions` module.
+2. Validate inputs on the server.
+3. Return typed results and handle errors.
+4. Use revalidation (`revalidatePath`/`revalidateTag`) if needed.
 
 ## Output
 
-- Form component(s) with validation and tests.
+- Server Action with validation and typed result handling.

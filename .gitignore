@@ -61,10 +61,6 @@ temp/
 logs/
 *.log
 
-# Storybook
-storybook-static/
-.storybook-cache/
-
 # Environment variables
 .env
 .env.local
@@ -74,12 +70,6 @@ storybook-static/
 .cache/
 .eslintcache
 .turbo/
-
-# Vite
-.vite/
-
-# Module Federation
-dist-*
 
 # Visual Regression Testing
 __image_snapshots__/

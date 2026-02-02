@@ -1,29 +1,31 @@
 ---
-name: state-pattern
-description: Choose and implement the right state management pattern.
+name: next-bff
+description: Create a Next.js BFF layer with Route Handlers and server data access.
 disable-model-invocation: true
 ---
-# State Pattern
+# Next.js BFF (Backend for Frontend)
 
-Select local vs global state and implement the pattern with best practices.
+Implement a BFF using Route Handlers and server-only logic.
 
 ## When to Use
 
-- Use this skill when state is shared across multiple components or routes.
+- Aggregating multiple backend APIs
+- Hiding credentials and tokens
+- Normalizing responses for the UI
 
 ## Inputs
 
-- State shape and lifecycle
-- Consumers and update frequency
-- Persistence or caching needs
+- External services to aggregate
+- Auth requirements
+- Cache strategy (no-store vs revalidate)
 
 ## Instructions
 
-1. Decide local vs global state (justify decision).
-2. Implement store or context if global.
-3. Add selectors or derived state helpers.
-4. Add tests for state updates and selectors.
+1. Create Route Handlers under `app/api/`.
+2. Fetch from upstream services on the server.
+3. Normalize and validate responses.
+4. Apply caching and revalidation explicitly.
 
 ## Output
 
-- State implementation with tests and a short rationale.
+- BFF endpoints with typed, normalized responses.

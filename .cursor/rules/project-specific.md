@@ -14,23 +14,22 @@ Customize this file for your project's specific needs:
 ## Example Rules
 
 ```markdown
-## API Integration
+## App Router
 
-- All API calls must use the centralized API client
-- Error handling must follow the standard error format
-- API responses must be typed with TypeScript interfaces
+- Default to Server Components in `app/`
+- Use `"use client"` only when interactivity is required
+- Use `loading.tsx`, `error.tsx`, and `not-found.tsx` per route segment
 
-## State Management
+## API & BFF
 
-- Use React Context for theme and user preferences
-- Use Zustand for complex global state
-- Avoid prop drilling beyond 3 levels
+- Use Route Handlers in `app/api/*/route.ts`
+- Validate all inputs and return typed responses
+- Keep secrets server-only
 
-## Component Patterns
+## Performance
 
-- Feature components go in `features/` directory
-- Shared components in `components/`
-- Each component must have a corresponding test file
+- Prefer server data fetching with caching and revalidation
+- Use `next/image` and `next/font` for optimization
 ```
 
 ## Maintenance

@@ -1,28 +1,29 @@
 ---
-name: test-plan
-description: Generate a test plan for a feature or change.
+name: next-data-fetching-cache
+description: Define data fetching and caching strategy for Next.js routes.
 disable-model-invocation: true
 ---
-# Test Plan
+# Next.js Data Fetching & Cache Strategy
 
-Create a structured test plan covering unit, integration, and E2E tests.
+Plan data fetching and caching for App Router routes.
 
 ## When to Use
 
-- Use this skill before implementing a feature or refactor.
+- Designing new data-heavy pages
+- Choosing between SSR, SSG, and ISR
 
 ## Inputs
 
-- Feature description
-- Critical paths and edge cases
+- Data freshness needs
+- User personalization requirements
 
 ## Instructions
 
-1. List unit test cases for pure logic.
-2. List integration tests for component interactions.
-3. Identify E2E scenarios for user journeys.
-4. Call out accessibility and error-state tests.
+1. Decide per-route caching (`no-store` vs `revalidate`).
+2. Use server-side fetching to avoid client waterfalls.
+3. Use tags and on-demand revalidation where needed.
+4. Document cache decisions in code comments.
 
 ## Output
 
-- A checklist-style test plan.
+- Clear cache and fetch strategy for the route.

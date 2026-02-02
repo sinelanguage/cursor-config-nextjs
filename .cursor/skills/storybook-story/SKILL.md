@@ -1,28 +1,28 @@
 ---
-name: storybook-story
-description: Add a Storybook story with interactions and a11y notes.
+name: next-metadata-seo
+description: Add metadata and SEO patterns in Next.js App Router.
 disable-model-invocation: true
 ---
-# Storybook Story
+# Next.js Metadata and SEO
 
-Create a Storybook story for a component with interaction tests.
+Implement metadata for App Router routes.
 
 ## When to Use
 
-- Use this skill when adding a new component or variant.
+- Adding SEO metadata to routes
+- Dynamic metadata for content pages
 
 ## Inputs
 
-- Component name and props
-- Variant list
+- Page title/description
+- Open Graph and social fields
 
 ## Instructions
 
-1. Create a `.stories.tsx` file for the component.
-2. Add primary and variant stories.
-3. Include interaction tests if applicable.
-4. Document accessibility behavior in story notes.
+1. Add `metadata` or `generateMetadata` to the route.
+2. Use structured metadata objects.
+3. Avoid client-only metadata updates.
 
 ## Output
 
-- Storybook story file with variants and interactions.
+- Route metadata aligned with App Router patterns.

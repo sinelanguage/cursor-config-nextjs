@@ -1,27 +1,29 @@
 ---
-name: docs-update
-description: Identify and apply required documentation updates for changes.
+name: next-deployment
+description: Prepare deployment targets for Next.js apps.
 disable-model-invocation: true
 ---
-# Docs Update
+# Next.js Deployment
 
-Ensure documentation stays accurate for code or workflow changes.
+Configure deployment for Vercel, Node, or container targets.
 
 ## When to Use
 
-- Use this skill after implementing a change.
+- Setting up deployment strategy
+- Aligning build outputs with infrastructure
 
 ## Inputs
 
-- Summary of changes
-- Affected areas (build, CI, architecture, components)
+- Target environment (Vercel, Node, container, static export)
+- Runtime requirements (edge vs node)
 
 ## Instructions
 
-1. Identify which docs need updates (README, SETUP, CHANGELOG, .context).
-2. Propose specific edits or sections to update.
-3. Ensure versioning and changelog entries are added.
+1. Confirm deployment target and runtime constraints.
+2. Ensure `next.config.ts` aligns with target output.
+3. Add environment variables via `.env.*` and platform secrets.
+4. Verify `next build` output and start command.
 
 ## Output
 
-- A list of required documentation updates and suggested edits.
+- Deployment-ready configuration guidance.

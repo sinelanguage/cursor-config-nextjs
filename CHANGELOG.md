@@ -9,19 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add project-level Agent Skills scaffolding under `.cursor/skills/`
-- Add skills for feature specs, API contracts, routes, hooks, state, and forms
-- Add skills for accessibility, performance, testing, MSW, and Storybook
-- Add skills for release checklists, docs updates, and security reviews
-- Add sample verifier subagent under `.cursor/agents/`
-- Document skills and subagents in README and setup guide
-
 ### Changed
-
-- Update Cursor auto-detection guidance to include skills and subagents
-- Add usage guidance for skills and greenfield/existing setups
-- Add end-to-end usage flow for applying this repo
-- Rename repo to `cursor-config-web` and update README stack section
 
 ### Deprecated
 
@@ -31,35 +19,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
-## [1.0.0] - 2025-01-15
+## [2.0.0] - 2026-02-01
 
-### Added (v1.0.0)
+### Added
 
-- Initial release of Principal Frontend Cursor AI Setup
-- Comprehensive `.cursorrules` configuration for principal frontend development
-- Architecture documentation (`.context/architecture.md`)
-- Design system documentation (`.context/design-system.md`)
-- Workflow documentation (`.context/workflows.md`)
-- Code conventions documentation (`.context/conventions.md`)
-- Technology stack documentation (`.context/stack.md`)
-- Support for React 18+ with concurrent features
-- TypeScript 5.5+ strict mode configuration
-- Module Federation v1 and v2 support via Vite plugin
-- ShadCN UI component integration (copy-paste approach)
-- Radix UI primitive patterns documentation
-- Testing stack with Vitest, Testing Library, and Playwright
-- Security scanning with npm audit (built-in)
-- Accessibility standards (WCAG 2.2 Level AA)
-- CI/CD workflows for GitHub Actions and GitLab CI
-- Project templates for Vite, TypeScript, ESLint, Storybook
+- Next.js App Router-first rules and architecture guidance
+- Route Handler and BFF patterns for `app/api`
+- Hybrid rendering and partial hydration guidance
+- Next.js-focused templates (`next.config.ts`, `tsconfig.json`, `.eslintrc.json`, `package.json`)
+- Use-case specific Next.js skills (App Router, Pages Router, ISR, Edge, Deployment, Migration)
 
-### Documentation
+### Changed
 
-- Complete README with quick start guide
-- Architecture patterns and best practices
-- Component integration guidelines
-- File organization conventions
-- Git workflow and release process documentation
+- Replace frontend/web stack with Next.js-only standards and docs
+- Update CI artifacts to `.next/` output
+
+### Removed
+
+- Legacy frontend references and templates
 
 ---
 
@@ -95,21 +72,17 @@ Each entry should:
 
 ```markdown
 ### Added
-- Support for ShadCN UI components via copy-paste approach
-- Radix UI primitive patterns documentation (#45)
-- Git tagging requirements for all releases
+- App Router guidance for Server Components
+- Route Handler patterns for API and BFF
 
 ### Changed
-- Updated TypeScript strict mode configuration
-- Enhanced Module Federation documentation with v2 examples
+- Update metadata guidance for App Router
 
 ### Fixed
-- Corrected file organization patterns in conventions.md (#78)
-- Fixed accessibility documentation examples
+- Corrected caching strategy examples
 
 ### Security
-- Updated npm audit configuration for security scanning
-- Added security best practices to documentation
+- Strengthened input validation guidance
 ```
 
 ### Maintenance Workflow
@@ -125,7 +98,7 @@ Each entry should:
    - Update version number following SemVer
 
 3. **After Release**:
-   - Create git tag matching version (e.g., `v1.2.0`)
+   - Create git tag matching version (e.g., `v2.0.0`)
    - Push tag to repository
    - Create GitHub/GitLab release with changelog content
 
@@ -151,4 +124,4 @@ Update the changelog for:
 
 ---
 
-For more information about changelog maintenance, see [Keep a Changelog](https://keepachangelog.com/).
+For more information about changelog maintenance, see [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).

@@ -1,31 +1,30 @@
 ---
-name: api-contract
-description: Define a typed API contract with validation and client helpers.
+name: next-route-handler-api
+description: Create a typed Route Handler API in app/api.
 disable-model-invocation: true
 ---
-# API Contract
+# Next.js Route Handler API
 
-Define request/response shapes, validation, and client usage for an API endpoint.
+Create a typed API endpoint using `app/api/*/route.ts`.
 
 ## When to Use
 
-- Use this skill when adding or updating an API endpoint.
-- Use this skill when you need typed contracts shared across client and server.
+- Build API routes or BFF endpoints
+- Server-only logic and secrets
 
 ## Inputs
 
-- Endpoint path and method
-- Request body/query params
-- Response shape and error cases
-- Auth requirements
+- Route path (e.g. `app/api/users/route.ts`)
+- HTTP methods
+- Request/response shapes
 
 ## Instructions
 
-1. Define TypeScript types for request and response.
-2. Add runtime validation (zod or equivalent).
-3. Provide a typed client function signature.
-4. Document error cases and status codes.
+1. Create `route.ts` with the required HTTP methods.
+2. Validate input and return typed responses.
+3. Use `NextResponse` with explicit status codes.
+4. Keep secrets server-only.
 
 ## Output
 
-- Types, validation schema, and client function stub.
+- Route Handler with validated, typed request/response.

@@ -1,29 +1,29 @@
 ---
-name: route-scaffold
-description: Scaffold a route with loader, error boundary, and tests.
+name: next-pages-router-page
+description: Scaffold a Pages Router route with data fetching and tests.
 disable-model-invocation: true
 ---
-# Route Scaffold
+# Next.js Pages Router Page
 
-Create a new route page with data loading, error handling, and tests.
+Create a new `pages/` route for legacy or compatibility use cases.
 
 ## When to Use
 
-- Use this skill when adding a new route or page.
+- Existing `pages/` routes
+- Legacy integrations that require Pages Router
 
 ## Inputs
 
-- Route path and name
-- Data requirements
-- Access control rules
+- Route path (e.g. `pages/account.tsx`)
+- Data fetching method (SSR/SSG/ISR)
 
 ## Instructions
 
-1. Create the route component with a clear layout.
-2. Add a loader or data-fetching function.
-3. Add an error boundary or error UI.
-4. Add tests for loading, success, and error states.
+1. Create the page file under `pages/`.
+2. Use `getServerSideProps`, `getStaticProps`, or `getStaticPaths` as needed.
+3. Keep data fetching typed and validated.
+4. Add a basic test if testing is configured.
 
 ## Output
 
-- Route file(s) with loader, error UI, and tests.
+- Page file with typed data fetching for Pages Router.

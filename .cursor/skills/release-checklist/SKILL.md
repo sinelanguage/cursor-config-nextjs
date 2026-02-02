@@ -1,28 +1,29 @@
 ---
-name: release-checklist
-description: Generate a pre-release checklist and changelog steps.
+name: next-migration-app-router
+description: Migrate routes from Pages Router to App Router safely.
 disable-model-invocation: true
 ---
-# Release Checklist
+# Next.js Pages to App Router Migration
 
-Prepare a release checklist that matches this repo's workflow.
+Plan and migrate existing `pages/` routes to `app/`.
 
 ## When to Use
 
-- Use this skill before tagging a release.
+- Incremental migration to App Router
+- Reducing legacy Pages Router surface
 
 ## Inputs
 
-- Version number (SemVer)
-- Release scope (major, minor, patch)
+- Routes to migrate
+- Data fetching method in `pages/`
 
 ## Instructions
 
-1. Confirm tests, lint, and build pass.
-2. Ensure changelog is updated and formatted.
-3. Verify version references and tags.
-4. List any deployment or publish steps.
+1. Identify route parity and dependencies.
+2. Create App Router equivalents under `app/`.
+3. Replace `getServerSideProps`/`getStaticProps` with server fetches.
+4. Remove legacy routes after validation.
 
 ## Output
 
-- A checklist of pre-release actions.
+- Migration plan and App Router replacement routes.

@@ -1,28 +1,28 @@
 ---
-name: perf-check
-description: Run a quick performance review and propose optimizations.
+name: next-isr-revalidation
+description: Add ISR and on-demand revalidation to Next.js routes.
 disable-model-invocation: true
 ---
-# Performance Check
+# Next.js ISR and Revalidation
 
-Provide a focused performance pass for a feature or page.
+Add incremental static regeneration with explicit revalidation.
 
 ## When to Use
 
-- Use this skill when UI feels slow or before release.
+- Pages that can tolerate stale content
+- Performance-sensitive routes
 
 ## Inputs
 
-- Target components or pages
-- Known bottlenecks (if any)
+- Route segment
+- Revalidation interval or tags
 
 ## Instructions
 
-1. Identify expensive renders or large bundles.
-2. Suggest memoization or derived state fixes.
-3. Recommend code splitting or lazy loading.
-4. Check image and font loading strategies.
+1. Use `revalidate` options on server fetches.
+2. Add `revalidatePath` or `revalidateTag` where needed.
+3. Ensure cache strategy is explicit and documented.
 
 ## Output
 
-- A list of concrete performance recommendations.
+- ISR-enabled route with revalidation strategy.

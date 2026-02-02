@@ -1,28 +1,29 @@
 ---
-name: hook-scaffold
-description: Scaffold a custom hook with types, docs, and tests.
+name: next-hybrid-spa
+description: Create a hybrid SPA section with client islands and partial hydration.
 disable-model-invocation: true
 ---
-# Hook Scaffold
+# Next.js Hybrid SPA
 
-Create a reusable hook with strict typing and tests.
+Create a client-heavy section within an App Router app.
 
 ## When to Use
 
-- Use this skill when extracting reusable logic.
+- SPA-like interactions within a Next.js app
+- Client-driven state and routing behavior
 
 ## Inputs
 
-- Hook name (useX)
-- Parameters and return shape
-- Side effects or dependencies
+- Route segment
+- Interactive components list
 
 ## Instructions
 
-1. Create the hook file and export a typed API.
-2. Add inline documentation for usage and constraints.
-3. Write tests with `renderHook` for key scenarios.
+1. Keep the route entry as a Server Component.
+2. Move interactive parts to Client Components.
+3. Use `useTransition` for non-urgent updates.
+4. Avoid `ssr: false` unless strictly necessary.
 
 ## Output
 
-- Hook implementation and tests.
+- Hybrid page with server shell and client islands.

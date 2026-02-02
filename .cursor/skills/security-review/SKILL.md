@@ -1,28 +1,29 @@
 ---
-name: security-review
-description: Run a lightweight security review and checklist.
+name: next-auth-session
+description: Add auth/session patterns using Middleware and server-only logic.
 disable-model-invocation: true
 ---
-# Security Review
+# Next.js Auth and Session Patterns
 
-Perform a focused security review for frontend and config changes.
+Implement authentication and session handling without leaking secrets.
 
 ## When to Use
 
-- Use this skill before release or after auth/data changes.
+- Protecting routes
+- Managing sessions server-side
 
 ## Inputs
 
-- Areas touched (auth, storage, API, config)
-- Known risks or incidents
+- Auth provider integration
+- Session storage approach
 
 ## Instructions
 
-1. Check for unsafe patterns (XSS, insecure storage, secrets).
-2. Review CSP and environment variable handling.
-3. Ensure dependency scanning is noted (`npm audit`).
-4. List any missing mitigations or follow-ups.
+1. Keep auth logic server-only.
+2. Use Middleware for gatekeeping and redirects.
+3. Validate session tokens in Route Handlers or Server Actions.
+4. Never expose secrets in Client Components.
 
 ## Output
 
-- A security checklist with findings and next steps.
+- Auth/session flow aligned with Next.js server-first patterns.

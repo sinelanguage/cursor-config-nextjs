@@ -1,45 +1,31 @@
 ---
-name: component-scaffold
-description: Scaffold a new React component using this repo's conventions, including tests and stories.
+name: next-app-router-page
+description: Scaffold a Next.js App Router page with server-first rendering.
 disable-model-invocation: true
 ---
-# Component Scaffold
+# Next.js App Router Page
 
-Create a new component following the conventions in `.context/conventions.md` and `.context/design-system.md`.
+Create a new App Router route with Server Components by default.
 
 ## When to Use
 
-- Use this skill when you need a new reusable UI component.
-- Use this skill when you want tests and Storybook stories created together.
+- New pages under `app/`
+- Server-first rendering with partial hydration
 
 ## Inputs
 
-- Component name (PascalCase, e.g. `UserCard`)
-- Target path (default: `src/components/<ComponentName>/`)
-- Props and variants (if any)
-- Styling approach (Tailwind or tokens)
+- Route segment path (e.g. `app/dashboard`)
+- Data needs (static/ISR/dynamic)
+- Client interactivity requirements
 
 ## Instructions
 
-1. Create the component folder and files:
-   - `ComponentName.tsx`
-   - `ComponentName.test.tsx`
-   - `ComponentName.stories.tsx`
-   - `index.ts`
-2. Implement the component with strict TypeScript (no `any`).
-3. Use `forwardRef` only if it is truly needed.
-4. Export types and component from `index.ts`.
-5. Add at least one interaction test using Testing Library.
-6. Add a Storybook story that documents variants and accessibility.
-7. Follow naming, import order, and file organization conventions.
+1. Create `page.tsx` in the route segment.
+2. Default to a Server Component (no `"use client"`).
+3. Add `loading.tsx`, `error.tsx`, and `not-found.tsx` if needed.
+4. Use `fetch` with explicit caching (`no-store` or `revalidate`).
+5. Add `generateMetadata` or `metadata` when SEO is required.
 
 ## Output
 
-- A new component folder with component, test, story, and index files.
-- Any required updates to barrel exports.
-
-## Validation
-
-- Ensure TypeScript types are explicit and correct.
-- Ensure tests and stories compile without errors.
-- If commands are available, run: `npm run lint` and `npm run test`.
+- App Router files in the target segment with server-first patterns.

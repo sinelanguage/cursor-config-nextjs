@@ -1,32 +1,29 @@
 ---
-name: feature-spec
-description: Turn a feature request into a spec with acceptance criteria and tasks.
+name: next-hybrid-app
+description: Combine App Router, Pages Router, and API in one Next.js app.
 disable-model-invocation: true
 ---
-# Feature Spec
+# Next.js Hybrid App
 
-Create a concise product and technical specification for a requested feature.
+Create a hybrid app that mixes App Router, Pages Router, and API routes safely.
 
 ## When to Use
 
-- Use this skill when a user asks for a new feature or change.
-- Use this skill before implementation to clarify scope and tests.
+- Migrating from Pages Router to App Router
+- Keeping legacy routes while adding new App Router features
 
 ## Inputs
 
-- Feature request or problem statement
-- Target area (frontend, backend, full stack)
-- Constraints (performance, accessibility, security)
+- Existing routes and new routes
+- API surface to keep or move
 
 ## Instructions
 
-1. Summarize the goal in 1-2 sentences.
-2. List assumptions and out-of-scope items.
-3. Define acceptance criteria as bullet points.
-4. Propose a minimal implementation plan (3-7 steps).
-5. List a test plan (unit, integration, E2E where relevant).
-6. Call out risks or dependencies.
+1. Keep legacy routes in `pages/`.
+2. Add new routes in `app/`.
+3. Avoid route collisions.
+4. Prefer `app/api` Route Handlers for new APIs.
 
 ## Output
 
-- A spec section with goals, acceptance criteria, plan, and test plan.
+- Hybrid routing plan and updated route structure.
