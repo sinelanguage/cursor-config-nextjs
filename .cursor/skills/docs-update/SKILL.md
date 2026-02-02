@@ -5,7 +5,8 @@ disable-model-invocation: true
 ---
 # Next.js Deployment
 
-Configure deployment for Vercel, Node, or container targets.
+Configure deployment for Vercel, Node, or container targets with explicit
+runtime settings.
 
 ## When to Use
 
@@ -16,6 +17,7 @@ Configure deployment for Vercel, Node, or container targets.
 
 - Target environment (Vercel, Node, container, static export)
 - Runtime requirements (edge vs node)
+- Build output constraints
 
 ## Instructions
 
@@ -23,6 +25,7 @@ Configure deployment for Vercel, Node, or container targets.
 2. Ensure `next.config.ts` aligns with target output.
 3. Add environment variables via `.env.*` and platform secrets.
 4. Verify `next build` output and start command.
+5. Validate edge vs node support for all routes.
 
 ## Output
 

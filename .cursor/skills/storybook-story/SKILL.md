@@ -5,7 +5,7 @@ disable-model-invocation: true
 ---
 # Next.js Metadata and SEO
 
-Implement metadata for App Router routes.
+Implement metadata for App Router routes with explicit social and SEO fields.
 
 ## When to Use
 
@@ -16,12 +16,14 @@ Implement metadata for App Router routes.
 
 - Page title/description
 - Open Graph and social fields
+- Structured data needs (JSON-LD)
 
 ## Instructions
 
 1. Add `metadata` or `generateMetadata` to the route.
 2. Use structured metadata objects.
-3. Avoid client-only metadata updates.
+3. Add Open Graph and Twitter fields when needed.
+4. Avoid client-only metadata updates.
 
 ## Output
 

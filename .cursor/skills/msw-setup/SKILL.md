@@ -5,7 +5,7 @@ disable-model-invocation: true
 ---
 # Next.js Static Site (SSG)
 
-Generate a fully static site with Next.js.
+Generate a fully static site with Next.js and explicit output settings.
 
 ## When to Use
 
@@ -16,13 +16,15 @@ Generate a fully static site with Next.js.
 
 - Routes to pre-render
 - Data sources and build-time needs
+- Hosting requirements for static export
 
 ## Instructions
 
 1. Use static data fetching in App Router or Pages Router.
 2. Avoid server-only APIs for static-only routes.
 3. Configure `next.config.ts` for static output if required.
+4. Validate routing for static-only constraints.
 
 ## Output
 
-- Static-ready routing and data fetching setup.
+- Static-ready routing, data fetching, and output configuration.

@@ -17,6 +17,7 @@ Implement middleware and edge-safe logic for request-time controls.
 
 - Matchers and paths
 - Redirect/rewrites rules
+- Tenant routing or auth gates
 
 ## Instructions
 
@@ -24,6 +25,7 @@ Implement middleware and edge-safe logic for request-time controls.
 2. Keep logic stateless and edge-safe.
 3. Use `matcher` config to scope routes.
 4. Avoid Node-only APIs in edge runtime.
+5. Resolve tenant or auth context early when required.
 
 ## Output
 

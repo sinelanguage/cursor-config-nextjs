@@ -5,7 +5,7 @@ disable-model-invocation: true
 ---
 # Next.js ISR and Revalidation
 
-Add incremental static regeneration with explicit revalidation.
+Add incremental static regeneration with explicit revalidation and cache tags.
 
 ## When to Use
 
@@ -16,13 +16,15 @@ Add incremental static regeneration with explicit revalidation.
 
 - Route segment
 - Revalidation interval or tags
+- Cache invalidation triggers
 
 ## Instructions
 
 1. Use `revalidate` options on server fetches.
 2. Add `revalidatePath` or `revalidateTag` where needed.
 3. Ensure cache strategy is explicit and documented.
+4. Document stale content tolerance per route.
 
 ## Output
 
-- ISR-enabled route with revalidation strategy.
+- ISR-enabled route with revalidation and cache-tag strategy.

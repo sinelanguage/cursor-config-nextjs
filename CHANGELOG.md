@@ -31,7 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Replace frontend/web stack with Next.js-only standards and docs
+- Update standards and docs to focus on Next.js-only patterns
 - Update CI artifacts to `.next/` output
 
 ### Removed

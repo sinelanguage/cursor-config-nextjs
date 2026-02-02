@@ -5,25 +5,29 @@ disable-model-invocation: true
 ---
 # Next.js Server Actions
 
-Create Server Actions for form submissions and mutations.
+Create Server Actions for form submissions and mutations with explicit
+validation and security.
 
 ## When to Use
 
 - Mutations co-located with App Router pages
 - Forms requiring server-side validation
+- CSRF protection requirements
 
 ## Inputs
 
 - Form fields and validation rules
 - Redirect or revalidation behavior
+- CSRF strategy (token or double-submit cookie)
 
 ## Instructions
 
 1. Create a Server Action in the route or `actions` module.
 2. Validate inputs on the server.
-3. Return typed results and handle errors.
-4. Use revalidation (`revalidatePath`/`revalidateTag`) if needed.
+3. Enforce CSRF protection for state-changing actions.
+4. Return typed results and handle errors.
+5. Use revalidation (`revalidatePath`/`revalidateTag`) if needed.
 
 ## Output
 
-- Server Action with validation and typed result handling.
+- Server Action with validation, CSRF controls, and typed results.

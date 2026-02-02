@@ -5,7 +5,7 @@ disable-model-invocation: true
 ---
 # Next.js Pages to App Router Migration
 
-Plan and migrate existing `pages/` routes to `app/`.
+Plan and migrate existing `pages/` routes to `app/` with route parity checks.
 
 ## When to Use
 
@@ -16,13 +16,15 @@ Plan and migrate existing `pages/` routes to `app/`.
 
 - Routes to migrate
 - Data fetching method in `pages/`
+- Route parity requirements
 
 ## Instructions
 
 1. Identify route parity and dependencies.
 2. Create App Router equivalents under `app/`.
 3. Replace `getServerSideProps`/`getStaticProps` with server fetches.
-4. Remove legacy routes after validation.
+4. Validate metadata, cache settings, and error handling.
+5. Remove legacy routes after validation.
 
 ## Output
 
